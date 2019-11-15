@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class FruitRestController(val rSocketRequester: RSocketRequester) {
+class ChachkieRestController(val rSocketRequester: RSocketRequester) {
 
-    @GetMapping("/fruit")
-    fun getFruit(): Publisher<Fruit> {
+    @GetMapping("/chachkies")
+    fun getFruit(): Publisher<Chachkie> {
         return rSocketRequester
-                .route("availableFruit")
-                .data(FruitRequest(quantity = 1))
-                .retrieveMono(Fruit::class.java)
+                .route("availableChachkies")
+                .data(ChachkieRequest(quantity = 1))
+                .retrieveMono(Chachkie::class.java)
     }
 }

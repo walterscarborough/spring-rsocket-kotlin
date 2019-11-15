@@ -5,10 +5,10 @@ import org.springframework.stereotype.Controller
 import reactor.core.publisher.Mono
 
 @Controller
-class FruitRSocketController {
+class ChachkieRSocketController {
 
-    @MessageMapping("availableFruit")
-    fun availableFruit(): Mono<Fruit> {
-        return Mono.just(Fruit(name = "pineapple"))
+    @MessageMapping("availableChachkies")
+    fun availableChachkies(): Mono<Chachkie> {
+        return Mono.just(Chachkie(name = "pineapple"))
     }
 }
